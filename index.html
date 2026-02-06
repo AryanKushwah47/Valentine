@@ -59,7 +59,7 @@
         let noClickCount = 0;
 
         yesBtn.addEventListener('click', () => {
-            messageDiv.textContent = "Thank you thank you so much 'To phir shuru kare internet wala love☺️'";
+            messageDiv.textContent = "I know tum Yes bologi 😚,I Love you mera baccha 😘 , To Suru kre online wali harkate 🤭🙈🤞🏻💞";
             messageDiv.classList.remove('hidden');
             yesBtn.style.display = 'none';
             noBtn.style.display = 'none';
@@ -68,17 +68,29 @@
         noBtn.addEventListener('click', () => {
             noClickCount++;
             if (noClickCount === 1) {
-                messageDiv.textContent = "Please na";
+                messageDiv.textContent = "Please na 🤌🏻";
                 moveNoButton();
             } else if (noClickCount === 2) {
-                messageDiv.textContent = "Please click on yes";
+                messageDiv.textContent = "Please click on yes ✅";
                 moveNoButton();
             } else if (noClickCount === 3) {
-                messageDiv.textContent = "Man jao na";
+                messageDiv.textContent = "Man jao na 😟";
+                moveNoButton();
+} else if (noClickCount === 4) {
+                messageDiv.textContent = "itna bhe mt itrao 🙄";
+                moveNoButton();
+} else if (noClickCount === 5) {
+                messageDiv.textContent = "Me nau man jao na 😩";
+                moveNoButton();
+} else if (noClickCount === 6) {
+                messageDiv.textContent = "please baccha 🥺";
+                moveNoButton();
+} else if (noClickCount === 7) {
+                messageDiv.textContent = "Man bhe jaao na 😩😩😩😩";
                 moveNoButton();
             } else {
                 // Keep moving and pleading
-                messageDiv.textContent = "Please, please say yes! ❤️";
+                messageDiv.textContent = "Abhi bhe nhi maan rhi ho milo tum tb btata hu 😩🤨";
                 moveNoButton();
             }
             messageDiv.classList.remove('hidden');
