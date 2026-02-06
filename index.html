@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            color: #d63384;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #yes {
+            background-color: #ff69b4;
+            color: white;
+        }
+        #no {
+            background-color: #ccc;
+            color: black;
+            position: relative;
+        }
+        .message {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine?</h1>
+    <div class="buttons">
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+    <div id="message" class="message hidden"></div>
+
+    <script>
+        const yesBtn = document.getElementById('yes');
+        const noBtn = document.getElementById('no');
+        const messageDiv = document.getElementById('message');
+        let noClickCount = 0;
+
+        yesBtn.addEventListener('click', () => {
+            messageDiv.textContent = "Thank you thank you so much 'To phir shuru kare internet wala love☺️'";
+            messageDiv.classList.remove('hidden');
+            yesBtn.style.display = 'none';
+            noBtn.style.display = 'none';
+        });
+
+        noBtn.addEventListener('click', () => {
+            noClickCount++;
+            if (noClickCount === 1) {
+                messageDiv.textContent = "Please na";
+                moveNoButton();
+            } else if (noClickCount === 2) {
+                messageDiv.textContent = "Please click on yes";
+                moveNoButton();
+            } else if (noClickCount === 3) {
+                messageDiv.textContent = "Man jao na";
+                moveNoButton();
+            } else {
+                // Keep moving and pleading
+                messageDiv.textContent = "Please, please say yes! ❤️";
+                moveNoButton();
+            }
+            messageDiv.classList.remove('hidden');
+        });
+
+        function moveNoButton() {
+            const randomX = Math.random() * (window.innerWidth - 100);
+            const randomY = Math.random() * (window.innerHeight - 100);
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+</html>
